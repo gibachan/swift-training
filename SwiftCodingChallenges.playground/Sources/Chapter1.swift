@@ -1,5 +1,12 @@
 import Foundation
 
+// -----------------------------------------------------------------------------
+// Question
+// -----------------------------------------------------------------------------
+// Write a function that accepts a String as its only parameter,
+// and returns true if the string has only unique letters, taking letter case into account.
+// -----------------------------------------------------------------------------
+
 // This implementation does not scale.
 // Because contains() is O(n) operation so that very long input makes it slow.
 //public func challenge1(input: String) -> Bool {
