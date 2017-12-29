@@ -1,6 +1,6 @@
 import Foundation
 
-//testAll()
+testAll()
 
 
 func testAll() {
@@ -24,6 +24,11 @@ func testAll() {
     assert(challenge3(input1: "abc", input2: "Abc") == false, failedComment(3))
     assert(challenge3(input1: "abc", input2: "cbAa") == false, failedComment(3))
     
+    // challenge4
+    assert("Hello, world".fuzzyContains("Hello") == true, failedComment(4))
+    assert("Hello, world".fuzzyContains("WORLD") == true, failedComment(4))
+    assert("Hello, world".fuzzyContains("Goodbye") == false, failedComment(4))
+
     print("All test passes!!")
 }
 
