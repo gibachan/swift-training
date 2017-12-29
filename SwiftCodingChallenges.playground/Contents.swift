@@ -1,7 +1,7 @@
 import Foundation
 
+let start = Date()
+
 testAll()
 
-print("Passed all tests!!")
-
-
+print("Passed all tests: \(Date().timeIntervalSince(start)) sec")
