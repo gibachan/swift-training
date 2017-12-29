@@ -1,8 +1,5 @@
 import Foundation
 
-testAll()
-
-
 func testAll() {
     // challenge1
     assert(challenge1(input: "No duplicates") == true, failedComment(1))
@@ -28,10 +25,19 @@ func testAll() {
     assert("Hello, world".fuzzyContains("Hello") == true, failedComment(4))
     assert("Hello, world".fuzzyContains("WORLD") == true, failedComment(4))
     assert("Hello, world".fuzzyContains("Goodbye") == false, failedComment(4))
-
-    print("All test passes!!")
+    
+    // challenge5
+    assert(challenge5(input: "The rain in Spain", find: "a") == 2, failedComment(5))
+    assert(challenge5(input: "Mississippi", find: "i") == 4, failedComment(5))
+    assert(challenge5(input: "Hacking with Swift", find: "i") == 3, failedComment(5))
 }
 
 func failedComment(_ number: Int) -> String {
     return "Challenge \(number) failed"
 }
+
+
+testAll()
+
+print("Passed all tests!!")
+
