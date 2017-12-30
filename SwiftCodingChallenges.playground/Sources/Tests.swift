@@ -30,9 +30,14 @@ public func testAll() {
     assert(challenge5(input: "The rain in Spain", find: "a") == 2, failedComment(5))
     assert(challenge5(input: "Mississippi", find: "i") == 4, failedComment(5))
     assert(challenge5(input: "Hacking with Swift", find: "i") == 3, failedComment(5))
+    
+    // challenge6
+    assert(challenge6(input: "wombat") == "wombat", failedComment(6))
+    assert(challenge6(input: "hello") == "helo", failedComment(6))
+    assert(challenge6(input: "Mississippi") == "Misp", failedComment(6))
 }
 
-func failedComment(_ number: Int) -> String {
+public func failedComment(_ number: Int) -> String {
     return "Challenge \(number) failed"
 }
 
