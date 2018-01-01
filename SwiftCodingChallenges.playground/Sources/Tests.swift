@@ -35,6 +35,11 @@ public func testAll() {
     assert(challenge6(input: "wombat") == "wombat", failedComment(6))
     assert(challenge6(input: "hello") == "helo", failedComment(6))
     assert(challenge6(input: "Mississippi") == "Misp", failedComment(6))
+    
+    // challenge7
+    assert(challenge7(input: "a   b   c") == "a b c", failedComment(7))
+    assert(challenge7(input: "    a") == " a", failedComment(7))
+    assert(challenge7(input: "abc") == "abc", failedComment(7))
 }
 
 public func failedComment(_ number: Int) -> String {
