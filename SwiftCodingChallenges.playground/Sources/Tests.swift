@@ -40,6 +40,12 @@ public func testAll() {
     assert(challenge7(input: "a   b   c") == "a b c", failedComment(7))
     assert(challenge7(input: "    a") == " a", failedComment(7))
     assert(challenge7(input: "abc") == "abc", failedComment(7))
+    
+    // challenge8
+    assert(challenge8(input1: "abcde", input2: "eabcd") == true, failedComment(8))
+    assert(challenge8(input1: "abcde", input2: "cdeab") == true, failedComment(8))
+    assert(challenge8(input1: "abcde", input2: "abced") == false, failedComment(8))
+    assert(challenge8(input1: "abc", input2: "a") == false, failedComment(8))
 }
 
 public func failedComment(_ number: Int) -> String {
