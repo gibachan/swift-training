@@ -50,6 +50,10 @@ public func testAll() {
     // challenge9
     assert(challenge9(input: "The quick brown fox jumps over the lazy dog") == true, failedComment(9))
     assert(challenge9(input: "The quick brown fox jumped over the lazy dog") == false, failedComment(9))
+    
+    // challenge10
+    assert(challenge10(input: "Swift Coding Challenges") == (6, 15), failedComment(10))
+    assert(challenge10(input: "Mississippi") == (4, 7), failedComment(10))
 }
 
 public func failedComment(_ number: Int) -> String {
