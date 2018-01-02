@@ -46,6 +46,10 @@ public func testAll() {
     assert(challenge8(input1: "abcde", input2: "cdeab") == true, failedComment(8))
     assert(challenge8(input1: "abcde", input2: "abced") == false, failedComment(8))
     assert(challenge8(input1: "abc", input2: "a") == false, failedComment(8))
+    
+    // challenge9
+    assert(challenge9(input: "The quick brown fox jumps over the lazy dog") == true, failedComment(9))
+    assert(challenge9(input: "The quick brown fox jumped over the lazy dog") == false, failedComment(9))
 }
 
 public func failedComment(_ number: Int) -> String {
