@@ -54,6 +54,15 @@ public func testAll() {
     // challenge10
     assert(challenge10(input: "Swift Coding Challenges") == (6, 15), failedComment(10))
     assert(challenge10(input: "Mississippi") == (4, 7), failedComment(10))
+    
+    // challenge11
+    assert(challenge11(input1: "Clamp", input2: "Cramp") == true, failedComment(11))
+    assert(challenge11(input1: "Clamp", input2: "Crams") == true, failedComment(11))
+    assert(challenge11(input1: "Clamp", input2: "Grams") == true, failedComment(11))
+    assert(challenge11(input1: "Clamp", input2: "Grans") == false, failedComment(11))
+    assert(challenge11(input1: "Clamp", input2: "Clam") == false, failedComment(11))
+    assert(challenge11(input1: "Clamp", input2: "maple") == false, failedComment(11))
+
 }
 
 public func failedComment(_ number: Int) -> String {
