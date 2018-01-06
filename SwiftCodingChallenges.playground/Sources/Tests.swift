@@ -77,6 +77,10 @@ public func testAll() {
     assert(challenge14(input: "ab") == ["ab", "ba"], failedComment(14))
     assert(challenge14(input: "abc") == ["abc", "acb", "bac", "bca", "cab", "cba"], failedComment(14))
     assert(challenge14(input: "wombat").count == 720, failedComment(14))
+    
+    // challenge15
+    assert(challenge15(input: "Swift Coding Challenges") == "tfiwS gnidoC segnellahC", failedComment(15))
+    assert(challenge15(input: "The quick brown fox") == "ehT kciuq nworb xof", failedComment(15))
 }
 
 public func failedComment(_ number: Int) -> String {
