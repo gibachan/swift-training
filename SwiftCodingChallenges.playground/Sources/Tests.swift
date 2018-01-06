@@ -72,7 +72,7 @@ public func testAll() {
     assert(challenge13(input: "aaabaaabaaa") == "a3b1a3b1a3", failedComment(13))
     assert(challenge13(input: "aaAAaa") == "a2A2a2", failedComment(13))
     
-     challenge14
+    // challenge14
     assert(challenge14(input: "a") == ["a"], failedComment(14))
     assert(challenge14(input: "ab") == ["ab", "ba"], failedComment(14))
     assert(challenge14(input: "abc") == ["abc", "acb", "bac", "bca", "cab", "cba"], failedComment(14))
