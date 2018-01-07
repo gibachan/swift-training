@@ -22,6 +22,11 @@ public func testAll() {
     // challenge18
     assert(challenge18(number: 4, power: 3) == 64, failedComment(18))
     assert(challenge18(number: 2, power: 8) == 256, failedComment(18))
+    
+    // challenge19
+    var a = 1, b = 2
+    challenge19(a: &a, b: &b)
+    assert(a == 2 && b == 1, failedComment(19))
 }
 
 public func failedComment(_ number: Int) -> String {
