@@ -18,6 +18,10 @@ public func testAll() {
     assert(value1 >= 1 && value1 <= 5, failedComment(17))
     assert(value2 >= 8 && value2 <= 10, failedComment(17))
     assert(value3 == 12, failedComment(17))
+    
+    // challenge18
+    assert(challenge18(number: 4, power: 3) == 64, failedComment(18))
+    assert(challenge18(number: 2, power: 8) == 256, failedComment(18))
 }
 
 public func failedComment(_ number: Int) -> String {
