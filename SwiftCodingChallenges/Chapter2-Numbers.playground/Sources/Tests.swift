@@ -34,6 +34,13 @@ public func testAll() {
     assert(challenge20(number: 4) == false, failedComment(20))
     assert(challenge20(number: 9) == false, failedComment(20))
     assert(challenge20(number: 16777259) == true, failedComment(20))
+
+    // challenge21
+    let result21a = challenge21a(number: 12)
+    let result21b = challenge21a(number: 28)
+    assert(result21a.nextHighest == 17 && result21a.nextLowest == 10, failedComment(19))
+    assert(result21b.nextHighest == 35 && result21b.nextLowest == 26, failedComment(19))
+
 }
 
 public func failedComment(_ number: Int) -> String {
