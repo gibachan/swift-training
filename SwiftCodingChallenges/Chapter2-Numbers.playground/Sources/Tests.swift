@@ -27,6 +27,13 @@ public func testAll() {
     var a = 1, b = 2
     challenge19(a: &a, b: &b)
     assert(a == 2 && b == 1, failedComment(19))
+    
+    // challenge20
+    assert(challenge20(number: 11) == true, failedComment(20))
+    assert(challenge20(number: 13) == true, failedComment(20))
+    assert(challenge20(number: 4) == false, failedComment(20))
+    assert(challenge20(number: 9) == false, failedComment(20))
+    assert(challenge20(number: 16777259) == true, failedComment(20))
 }
 
 public func failedComment(_ number: Int) -> String {
