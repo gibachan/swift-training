@@ -46,6 +46,15 @@ public func testAll() {
     assert(challenge22(number: 41) == 148, failedComment(22))
     assert(challenge22(number: 4) == 32, failedComment(22))
     assert(challenge22(number: 148) == 41, failedComment(22))
+
+    // challenge23
+    assert(challenge23c(input: "01010101") == true, failedComment(23))
+    assert(challenge23c(input: "123456789") == true, failedComment(23))
+    // 9,223,372,036,854,775,807 is largest number that can be represented
+    // by a signed 64-bit integer(Int).
+    // Therefore you should use UInt insead of Int
+    assert(challenge23c(input: "9223372036854775808") == true, failedComment(23))
+    assert(challenge23c(input: "1.01") == false, failedComment(23))
 }
 
 public func failedComment(_ number: Int) -> String {
