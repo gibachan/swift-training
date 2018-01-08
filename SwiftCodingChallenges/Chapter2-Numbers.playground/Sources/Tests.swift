@@ -41,6 +41,11 @@ public func testAll() {
     assert(result21a.nextHighest == 17 && result21a.nextLowest == 10, failedComment(19))
     assert(result21b.nextHighest == 35 && result21b.nextLowest == 26, failedComment(19))
 
+    // challenge22
+    assert(challenge22(number: 32) == 4, failedComment(22))
+    assert(challenge22(number: 41) == 148, failedComment(22))
+    assert(challenge22(number: 4) == 32, failedComment(22))
+    assert(challenge22(number: 148) == 41, failedComment(22))
 }
 
 public func failedComment(_ number: Int) -> String {
