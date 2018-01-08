@@ -55,6 +55,11 @@ public func testAll() {
     // Therefore you should use UInt insead of Int
     assert(challenge23c(input: "9223372036854775808") == true, failedComment(23))
     assert(challenge23c(input: "1.01") == false, failedComment(23))
+
+    // challenge24
+    assert(challenge24c(input: "a1b2c3") == 6, failedComment(24))
+    assert(challenge24c(input: "a10b20c30") == 60, failedComment(24))
+    assert(challenge24c(input: "h8ers") == 8, failedComment(24))
 }
 
 public func failedComment(_ number: Int) -> String {
