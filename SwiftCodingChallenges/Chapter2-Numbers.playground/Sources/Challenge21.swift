@@ -45,8 +45,6 @@ public func challenge21a(number: Int) -> (nextHighest: Int?, nextLowest: Int?) {
         return currentBinary.filter { (char: Character) -> Bool in char == "1" }.count
     }
     
-    
-    let targetBinary = String(number, radix: 2)
     let targetOnes = ones(in: number)
     
     var nextHighest: Int? = nil
