@@ -50,10 +50,10 @@ public func challenge24b(input: String) -> Int {
     return result
 }
 
-public func challenge24c(string: String) -> Int {
+public func challenge24c(input: String) -> Int {
     let regex = try! NSRegularExpression(pattern: "(\\d+)", options: [])
-    let matches = regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
-    let allNumbers = matches.flatMap { Int((string as NSString).substring(with: $0.range)) }
+    let matches = regex.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
+    let allNumbers = matches.flatMap { Int((input as NSString).substring(with: $0.range)) }
     return allNumbers.reduce(0, +)
 }
 
