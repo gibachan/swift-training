@@ -60,6 +60,16 @@ public func testAll() {
     assert(challenge24c(input: "a1b2c3") == 6, failedComment(24))
     assert(challenge24c(input: "a10b20c30") == 60, failedComment(24))
     assert(challenge24c(input: "h8ers") == 8, failedComment(24))
+    
+    // challenge25
+    assert(challenge25(input: 9) == 3, failedComment(25))
+    assert(challenge25(input: 16777216) == 4096, failedComment(25))
+    assert(challenge25(input: 16) == 4, failedComment(25))
+    assert(challenge25(input: 15) == 3, failedComment(25))
+
+    // challenge26
+    assert(challenge26(subtract: 5, from: 9) == 4, failedComment(26))
+    assert(challenge26(subtract: 10, from: 30) == 20, failedComment(26))
 }
 
 public func failedComment(_ number: Int) -> String {
