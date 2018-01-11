@@ -19,6 +19,10 @@ public func testAll() {
         contents(file28).contains("def"), failedComment(28))
     
     deleteFile(file28)
+    
+    // challenge29
+    assert(challenge29().contains("Documents"), failedComment(29))
+
 }
 
 public func failedComment(_ number: Int) -> String {
