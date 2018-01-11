@@ -9,21 +9,19 @@ import Foundation
 
 public func challenge27(filename: String, lineCount: Int) -> String {
     guard let input = try? String(contentsOfFile: filename) else { return "" }
-    print(input)
+
     var result = ""
     var lines = input.components(separatedBy: "\n")
     guard lines.count > 0 else { return "" }
     
+    lines.remove(at: lines.endIndex - 1) // To remove last empty line
+    
     lines.reverse()
     
-    //    result = lines.joined(separator: ",")
-    
     for i in 0 ..< min(lines.count, lineCount) {
-        result += "\(lines[i])"
+        result += "\(lines[i]), "
     }
-    //    result.remove(at: result.startIndex)
-    //
-    print("result")
-    print(result)
+    result.removeLast(2)
+
     return result
 }
