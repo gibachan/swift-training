@@ -70,3 +70,13 @@ public func createFile(at path: String, contents: String) {
         print("Error:\(error.localizedDescription)")
     }
 }
+
+public func createDirectory(at path: String) {
+    do {
+        try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
+    } catch let error {
+        print("Error:\(error.localizedDescription)")
+    }
+}
+
+
