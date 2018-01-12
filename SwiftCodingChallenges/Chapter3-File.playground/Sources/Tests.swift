@@ -23,6 +23,20 @@ public func testAll() {
     // challenge29
     assert(challenge29().contains("Documents"), failedComment(29))
 
+    // challenge30
+    // TODO: Add test for 48 hours past jpeg files.
+    createFile(at: tempPath(to: "a.jpg"), contents: "")
+    createFile(at: tempPath(to: "b.jg"), contents: "")
+    createFile(at: tempPath(to: "c.jpeg"), contents: "")
+    
+    assert(challenge30(directory: NSTemporaryDirectory()).contains("a.jpg"), failedComment(30))
+    assert(!challenge30(directory: NSTemporaryDirectory()).contains("b.jg"), failedComment(30))
+    assert(challenge30(directory: NSTemporaryDirectory()).contains("c.jpeg"), failedComment(30))
+    
+    deleteFile(tempPath(to: "a.jpg"))
+    deleteFile(tempPath(to: "b.jg"))
+    deleteFile(tempPath(to: "c.jpeg"))
+
 }
 
 public func failedComment(_ number: Int) -> String {
@@ -47,4 +61,12 @@ public func deleteFile(_ path: String) {
 
 public func contents(_ path: String) -> String {
     return (try? String(contentsOfFile: path)) ?? ""
+}
+
+public func createFile(at path: String, contents: String) {
+    do {
+        try contents.write(toFile: path, atomically: true, encoding: .utf8)
+    } catch let error {
+        print("Error:\(error.localizedDescription)")
+    }
 }
