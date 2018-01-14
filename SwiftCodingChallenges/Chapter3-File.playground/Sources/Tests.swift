@@ -81,7 +81,13 @@ public func testAll() {
     // Clean files
     if fileExists(dir31_1) { deleteFile(dir31_1) }
     if fileExists(dir31_out) { deleteFile(dir31_out) }
-
+    
+    // challenge32
+    assert(challenge32a(filename: resource("File32-1"), count: "Hello") == 1, failedComment(32))
+    assert(challenge32a(filename: resource("File32-1"), count: "Hello,") == 0, failedComment(32))
+    assert(challenge32a(filename: resource("File32-2"), count: "Spain") == 1, failedComment(32))
+    assert(challenge32a(filename: resource("File32-2"), count: "in") == 1, failedComment(32))
+    assert(challenge32a(filename: resource("File32-3"), count: "I’m") == 1, failedComment(32))
 }
 
 public func failedComment(_ number: Int) -> String {
