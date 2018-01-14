@@ -124,7 +124,7 @@ public func createFile(at path: String, contents: String) {
 
 public func createDirectory(at path: String) {
     do {
-        try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
+        try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
     } catch let error {
         print("Error:\(error.localizedDescription)")
     }
