@@ -89,7 +89,7 @@ public func testAll() {
     assert(challenge32a(filename: resource("File32-2"), count: "in") == 1, failedComment(32))
     assert(challenge32a(filename: resource("File32-3"), count: "I’m") == 1, failedComment(32))
     
-    // challenge31
+    // challenge33
     let dir33_1 = "\(NSTemporaryDirectory())dir33_1"
     let dir33_2 = "\(dir33_1)/subdir"
     let dir33_3 = "\(dir33_1)/sub/sub/sub/sub/subdir"
@@ -106,6 +106,24 @@ public func testAll() {
     assert(challenge33b(directory: dir33_1) == ["a.txt"], failedComment(33))
     
     if fileExists(dir33_1) { deleteFile(dir33_1) }
+    
+    // challenge34
+    let dir34_1 = "\(NSTemporaryDirectory())dir34_1"
+    let dir34_2 = "\(dir34_1)/subdirectory"
+    
+    let file34_1 = "\(dir34_1)/a"   // FIXME: Should be excutable
+    let file34_2 = "\(dir34_2)/b"   // FIXME: Should be excutable
+    
+    if fileExists(dir34_1) { deleteFile(dir34_1) }
+    createDirectory(at: dir34_2)
+    createFile(at: file34_1, contents: "abc")
+    createFile(at: file34_2, contents: "def")
+    
+    // Should test with excutable files
+    //assert(challenge34(directory: dir34_1) == ["a", "b"], failedComment(34))
+    assert(challenge34(directory: dir34_1) == [], failedComment(34))
+    
+    if fileExists(dir34_1) { deleteFile(dir34_1) }
 
 }
 
