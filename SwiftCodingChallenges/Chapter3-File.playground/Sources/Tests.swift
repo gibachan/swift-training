@@ -88,6 +88,25 @@ public func testAll() {
     assert(challenge32a(filename: resource("File32-2"), count: "Spain") == 1, failedComment(32))
     assert(challenge32a(filename: resource("File32-2"), count: "in") == 1, failedComment(32))
     assert(challenge32a(filename: resource("File32-3"), count: "I’m") == 1, failedComment(32))
+    
+    // challenge31
+    let dir33_1 = "\(NSTemporaryDirectory())dir33_1"
+    let dir33_2 = "\(dir33_1)/subdir"
+    let dir33_3 = "\(dir33_1)/sub/sub/sub/sub/subdir"
+    let file33_1 = "\(dir33_2)/a.txt"
+    let file33_2 = "\(dir33_3)/a.txt"
+    
+    if fileExists(dir33_1) { deleteFile(dir33_1) }
+    
+    createDirectory(at: dir33_2)
+    createDirectory(at: dir33_3)
+    createFile(at: file33_1, contents: "abc")
+    createFile(at: file33_2, contents: "abc")
+    
+    assert(challenge33b(directory: dir33_1) == ["a.txt"], failedComment(33))
+    
+    if fileExists(dir33_1) { deleteFile(dir33_1) }
+
 }
 
 public func failedComment(_ number: Int) -> String {
