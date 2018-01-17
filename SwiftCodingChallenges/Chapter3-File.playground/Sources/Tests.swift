@@ -125,6 +125,24 @@ public func testAll() {
     
     if fileExists(dir34_1) { deleteFile(dir34_1) }
 
+    
+    // challenge35
+    let dir35 = "\(NSTemporaryDirectory())dir35"
+    
+    if fileExists(dir35) { deleteFile(dir35) }
+    createDirectory(at: dir35)
+    
+    copyFile(from: Bundle.main.path(forResource: "Dir35/abc", ofType: "jpg")!, to: "\(dir35)/abc.jpg")
+    copyFile(from: Bundle.main.path(forResource: "Dir35/def", ofType: "jpeg")!, to: "\(dir35)/def.jpeg")
+    copyFile(from: Bundle.main.path(forResource: "Dir35/hij", ofType: "jpg")!, to: "\(dir35)/hij.jpg")
+    
+    challenge35(directory: dir35)
+    
+    assert(fileExists("\(dir35)/abc.png"), failedComment(35))
+    assert(fileExists("\(dir35)/def.png"), failedComment(35))
+    assert(fileExists("\(dir35)/hij.jpg"), failedComment(35))
+    
+    if fileExists(dir35) { deleteFile(dir35) }
 }
 
 public func failedComment(_ number: Int) -> String {
@@ -166,5 +184,10 @@ public func createDirectory(at path: String) {
         print("Error:\(error.localizedDescription)")
     }
 }
+
+public func copyFile(from path: String, to directory: String) {
+    try? FileManager.default.copyItem(atPath: path, toPath: directory)
+}
+
 
 
