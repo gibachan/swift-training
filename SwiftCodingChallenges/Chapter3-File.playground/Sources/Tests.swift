@@ -143,6 +143,10 @@ public func testAll() {
     assert(fileExists("\(dir35)/hij.jpg"), failedComment(35))
     
     if fileExists(dir35) { deleteFile(dir35) }
+    
+    // challenge36
+    assert(challenge36b(path: resource("File36")) == 8, failedComment(36))
+    assert(challenge36b(path: "File36-NotFound") == 0, failedComment(36))
 }
 
 public func failedComment(_ number: Int) -> String {
