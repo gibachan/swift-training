@@ -13,6 +13,11 @@ public func testAll() {
     assert([256, 16].challenge38(count: 3) == [16, 256], failedComment(38))
     assert([String]().challenge38(count: 3) == [String](), failedComment(38))
 
+    // challenge39
+    assert(["a", "abc", "ab"].challenge39() == ["abc", "ab", "a"], failedComment(39))
+    assert(["paul", "taylor", "adele"].challenge39() == ["taylor", "adele", "paul"], failedComment(39))
+    assert([String]().challenge39() == [], failedComment(39))
+
 }
 
 public func failedComment(_ number: Int) -> String {
