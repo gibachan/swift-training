@@ -18,6 +18,19 @@ public func testAll() {
     assert(["paul", "taylor", "adele"].challenge39() == ["taylor", "adele", "paul"], failedComment(39))
     assert([String]().challenge39() == [], failedComment(39))
 
+    // challenge40
+    var testArray40_1 = Array(1...100)
+    testArray40_1.remove(at: 25)
+    testArray40_1.remove(at: 20)
+    testArray40_1.remove(at: 6)
+    
+    let testArray40_2 = Array(1...100)
+    let testArray40_3 = [Int]()
+    
+    assert(challenge40c(array: testArray40_1) == [7, 21, 26], failedComment(40))
+    assert(challenge40c(array: testArray40_2) == [], failedComment(40))
+    assert(challenge40c(array: testArray40_3) == Array(1...100), failedComment(40))
+
 }
 
 public func failedComment(_ number: Int) -> String {
