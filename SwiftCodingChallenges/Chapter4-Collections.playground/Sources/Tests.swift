@@ -31,6 +31,14 @@ public func testAll() {
     assert(challenge40c(array: testArray40_2) == [], failedComment(40))
     assert(challenge40c(array: testArray40_3) == Array(1...100), failedComment(40))
 
+    // challenge 41
+    assert([1, 2, 3].challenge41() == 2, failedComment(41))
+    assert([1, 2, 9].challenge41() == 2, failedComment(41))
+    assert([1, 3, 5, 7, 9].challenge41() == 5, failedComment(41))
+    assert([1, 2, 3, 4].challenge41() == 2.5, failedComment(41))
+    assert([].challenge41() == nil, failedComment(41))
+    
+
 }
 
 public func failedComment(_ number: Int) -> String {
