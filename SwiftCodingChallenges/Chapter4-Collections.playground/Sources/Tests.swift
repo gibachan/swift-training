@@ -43,6 +43,21 @@ public func testAll() {
     assert([1, 2, 3].challenge42(indexOf: 3) == 2, failedComment(42))
     assert([1, 2, 3].challenge42(indexOf: 5) == nil, failedComment(42))
 
+    // challenge 43
+    let list_43 = LinkedList<Character>()
+    var previousNode_43: LinkedListNode<Character>? = nil
+    
+    for letter in "abcdefghijklmnopqrstuvwxyz" {
+        let node = LinkedListNode(value: letter)
+        if let predecessor = previousNode_43 {
+            predecessor.next = node
+        } else {
+            list_43.start = node
+        }
+        previousNode_43 = node
+    }
+
+    assert(list_43.printNodes() == "a b c d e f g h i j k l m n o p q r s t u v w x y z", failedComment(43))
 }
 
 public func failedComment(_ number: Int) -> String {
