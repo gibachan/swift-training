@@ -38,6 +38,10 @@ public func testAll() {
     assert([1, 2, 3, 4].challenge41() == 2.5, failedComment(41))
     assert([].challenge41() == nil, failedComment(41))
     
+    // challenge 42
+    assert([1, 2, 3].challenge42(indexOf: 1) == 0, failedComment(42))
+    assert([1, 2, 3].challenge42(indexOf: 3) == 2, failedComment(42))
+    assert([1, 2, 3].challenge42(indexOf: 5) == nil, failedComment(42))
 
 }
 
