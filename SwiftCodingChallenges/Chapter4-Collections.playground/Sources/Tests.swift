@@ -58,8 +58,35 @@ public func testAll() {
     }
 
     assert(list_43.printNodes() == "a b c d e f g h i j k l m n o p q r s t u v w x y z", failedComment(43))
+    
+    // challenge 44
+    let list_44_1 = createLinkedList(values: Array(1...5))
+    let list_44_2 = createLinkedList(values: Array(1...4))
+    let list_44_3 = createLinkedList(values: "ABCEDFGHIJKLMNOPQRSTUVWXYX".map { $0 })
+    
+    assert(list_44_1.centerNode?.value == 3, failedComment(44))
+    assert(list_44_2.centerNode?.value == 3, failedComment(44))
+    assert(list_44_3.centerNode?.value == "N", failedComment(44))
+
 }
 
 public func failedComment(_ number: Int) -> String {
     return "Challenge \(number) failed"
+}
+
+public func createLinkedList<T>(values: [T]) -> LinkedList<T> {
+    let list = LinkedList<T>()
+    var previousNode: LinkedListNode<T>? = nil
+    
+    for value in values {
+        let node = LinkedListNode(value: value)
+        if let predecessor = previousNode {
+            predecessor.next = node
+        } else {
+            list.start = node
+        }
+        previousNode = node
+    }
+    
+    return list
 }
