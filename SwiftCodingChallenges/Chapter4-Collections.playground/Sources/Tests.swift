@@ -68,6 +68,11 @@ public func testAll() {
     assert(list_44_2.centerNode?.value == 3, failedComment(44))
     assert(list_44_3.centerNode?.value == "N", failedComment(44))
 
+    
+    // challenge 46
+    assert([1, 2, 3].challenge46b { String($0) } == ["1", "2", "3"], failedComment(46))
+    assert(["1", "2", "3"].challenge46b { Int($0)! } == [1, 2, 3], failedComment(46))
+
 }
 
 public func failedComment(_ number: Int) -> String {
