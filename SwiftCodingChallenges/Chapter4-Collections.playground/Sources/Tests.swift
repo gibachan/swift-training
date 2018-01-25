@@ -73,6 +73,12 @@ public func testAll() {
     assert([1, 2, 3].challenge46b { String($0) } == ["1", "2", "3"], failedComment(46))
     assert(["1", "2", "3"].challenge46b { Int($0)! } == [1, 2, 3], failedComment(46))
 
+    // challenge 47
+    assert([1, 2, 3].challenge47d() == 1, failedComment(47))
+    assert(["q", "f", "k"].challenge47d() == "f", failedComment(47))
+    assert([4096, 256, 16].challenge47d() == 16, failedComment(47))
+    assert([String]().challenge47d() == nil, failedComment(47))
+    
 }
 
 public func failedComment(_ number: Int) -> String {
