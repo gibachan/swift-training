@@ -79,6 +79,16 @@ public func testAll() {
     assert([4096, 256, 16].challenge47d() == 16, failedComment(47))
     assert([String]().challenge47d() == nil, failedComment(47))
     
+    // challenge 48
+    var numbers = deque<Int>()
+    numbers.pushFront(5)
+    numbers.pushBack(8)
+    numbers.pushBack(3)
+    assert(numbers.count == 3, failedComment(47))
+    assert(numbers.popFront()! == 5, failedComment(47))
+    assert(numbers.popBack()! == 3, failedComment(47))
+    assert(numbers.popFront()! == 8, failedComment(47))
+    assert(numbers.popBack() == nil, failedComment(47))
 }
 
 public func failedComment(_ number: Int) -> String {
