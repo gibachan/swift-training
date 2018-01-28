@@ -94,6 +94,14 @@ public func testAll() {
     assert(challenge49a(1, 2, 2, 3, 3, 4) == 5, failedComment(49))
     assert(challenge49a(5, 5, 5, 12, 12) == 12, failedComment(49))
     assert(challenge49a(1, 1, 2, 2, 3, 3, 4, 4) == 10, failedComment(49))
+    
+    // challenge 50
+    assert(challenge50([0, 1, 1, -1, 2, 3, 1]) == 4...6, failedComment(50))
+    assert(challenge50([10, 20, 30, -10, -20, 10, 20]) == 0...2, failedComment(50))
+    assert(challenge50([1, -1, 2, -1]) == 2...2, failedComment(50))
+    assert(challenge50([2, 0, 2, 0, 2]) == 0...0, failedComment(50))
+    assert(challenge50([Int]()) == nil, failedComment(50))
+    
 }
 
 public func failedComment(_ number: Int) -> String {
