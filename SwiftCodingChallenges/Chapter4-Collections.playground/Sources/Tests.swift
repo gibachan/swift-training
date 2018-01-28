@@ -89,6 +89,11 @@ public func testAll() {
     assert(numbers.popBack()! == 3, failedComment(47))
     assert(numbers.popFront()! == 8, failedComment(47))
     assert(numbers.popBack() == nil, failedComment(47))
+    
+    // challenge 49
+    assert(challenge49a(1, 2, 2, 3, 3, 4) == 5, failedComment(49))
+    assert(challenge49a(5, 5, 5, 12, 12) == 12, failedComment(49))
+    assert(challenge49a(1, 1, 2, 2, 3, 3, 4, 4) == 10, failedComment(49))
 }
 
 public func failedComment(_ number: Int) -> String {
