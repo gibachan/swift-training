@@ -102,6 +102,25 @@ public func testAll() {
     assert(challenge50([2, 0, 2, 0, 2]) == 0...0, failedComment(50))
     assert(challenge50([Int]()) == nil, failedComment(50))
     
+    // challenge 51
+    let list_51 = LinkedList<Character>()
+    var previousNode_51: LinkedListNode<Character>? = nil
+    
+    for letter in "abcdefghijklmnopqrstuvwxyz" {
+        let node = LinkedListNode(value: letter)
+        if let predecessor = previousNode_51 {
+            predecessor.next = node
+        } else {
+            list_51.start = node
+        }
+        previousNode_51 = node
+    }
+    
+    assert(list_51.printNodes() == "a b c d e f g h i j k l m n o p q r s t u v w x y z", failedComment(51))
+    
+    let reversedList_51 = list_51.reversed()
+    
+    assert(reversedList_51.printNodes() == "z y x w v u t s r q p o n m l k j i h g f e d c b a", failedComment(51))
 }
 
 public func failedComment(_ number: Int) -> String {
