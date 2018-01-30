@@ -121,6 +121,12 @@ public func testAll() {
     let reversedList_51 = list_51.reversed()
     
     assert(reversedList_51.printNodes() == "z y x w v u t s r q p o n m l k j i h g f e d c b a", failedComment(51))
+    
+    // challenge 52
+    assert(challenge52a(numbers: [1, 2, 3]) == 6, failedComment(52))
+    assert(challenge52a(numbers: [1.0, 2.0, 3.0]) == 6.0, failedComment(52))
+    assert(challenge52a(numbers: Array<Float>([1.0, 2.0, 3.0])) == 6.0, failedComment(52))
+
 }
 
 public func failedComment(_ number: Int) -> String {
