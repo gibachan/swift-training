@@ -14,12 +14,18 @@ public class LinkedListNode<T> {
     public init(value: T) {
         self.value = value
     }
+    
+    // Added by challenge53
+    public var hashValue: Int = 0
 }
 
 public class LinkedList<T> {
     public var start: LinkedListNode<T>?
     
     public init() {}
+    
+    // Added by challenge53
+    internal var uniqueHashValue = 0
 }
 
 extension LinkedList {

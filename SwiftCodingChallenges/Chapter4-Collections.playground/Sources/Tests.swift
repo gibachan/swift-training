@@ -126,6 +126,30 @@ public func testAll() {
     assert(challenge52a(numbers: [1, 2, 3]) == 6, failedComment(52))
     assert(challenge52a(numbers: [1.0, 2.0, 3.0]) == 6.0, failedComment(52))
     assert(challenge52a(numbers: Array<Float>([1.0, 2.0, 3.0])) == 6.0, failedComment(52))
+    
+    // challenge 53
+    let list = LinkedList<UInt32>()
+    var previousNode: LinkedListNode<UInt32>? = nil
+    var linkBackNode: LinkedListNode<UInt32>? = nil
+    let linkBackPoint = Int(arc4random_uniform(1000))
+    
+    for i in 1...1000 {
+        let node = LinkedListNode(value: arc4random(), hashValue: list.getUniqueHashValue())
+        
+        if i == linkBackPoint { linkBackNode = node }
+        
+        if let predecessor = previousNode {
+            predecessor.next = node
+        } else {
+            list.start = node
+        }
+        
+        previousNode = node
+    }
+    
+    previousNode?.next = linkBackNode
+    
+    assert(list.challenge53() == linkBackNode, failedComment(53))
 
 }
 
