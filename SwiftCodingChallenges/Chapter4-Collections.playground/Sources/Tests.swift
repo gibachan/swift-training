@@ -151,6 +151,33 @@ public func testAll() {
     
     assert(list.challenge53() == linkBackNode, failedComment(53))
 
+    // challenge 54
+    let tree54_1 = BinarySearchTree(array: [2, 1, 3])
+    let tree54_2 = BinarySearchTree(array: [5, 1, 7, 6, 2, 1, 9])
+    let tree54_3 = BinarySearchTree(array: [5, 1, 7, 6, 2, 1, 9, 1])
+    let tree54_4 = BinarySearchTree(array: [5, 1, 7, 6, 2, 1, 9, 1, 3])
+    let tree54_5 = BinarySearchTree(array: [50, 25, 100, 26, 101, 24, 99])
+    let tree54_6 = BinarySearchTree(array: ["k", "t", "d", "a", "z", "m", "f"])
+    let tree54_7 = BinarySearchTree(array: [Character]())
+    
+    let tree54_8 = BinarySearchTree(array: [1, 2, 3, 4, 5])
+    let tree54_9 = BinarySearchTree(array: [10, 5, 4, 3, 2, 1, 11, 12, 13, 14, 15])
+    let tree54_10 = BinarySearchTree(array: ["f", "d", "c", "e", "a", "b"])
+    
+    // The following values should create balanced trees:
+    assert(tree54_1.isBalanced() == true, failedComment(54))
+    assert(tree54_2.isBalanced() == true, failedComment(54))
+    assert(tree54_3.isBalanced() == true, failedComment(54))
+    assert(tree54_4.isBalanced() == true, failedComment(54))
+    assert(tree54_5.isBalanced() == true, failedComment(54))
+    assert(tree54_6.isBalanced() == true, failedComment(54))
+    assert(tree54_7.isBalanced() == true, failedComment(54))
+    
+    //The following values should not create balanced trees:
+    assert(tree54_8.isBalanced() == false, failedComment(54))
+    assert(tree54_9.isBalanced() == false, failedComment(54))
+    assert(tree54_10.isBalanced() == false, failedComment(54))
+
 }
 
 public func failedComment(_ number: Int) -> String {
