@@ -27,6 +27,18 @@ public func testAll() {
     assert(challenge57("curry", "flurry") == false, failedComment(57))
     assert(challenge57(112233, 112211) == false, failedComment(57))
 
+    // challenge 58
+    assert(challenge58(input: "()") == true, failedComment(58))
+    assert(challenge58(input: "([])") == true, failedComment(58))
+    assert(challenge58(input: "([])(<{}>)") == true, failedComment(58))
+    assert(challenge58(input: "([]{}<[{}]>)") == true, failedComment(58))
+    assert(challenge58(input: "}{") == false, failedComment(58))
+    assert(challenge58(input: "([)]") == false, failedComment(58))
+    assert(challenge58(input: "([)") == false, failedComment(58))
+    assert(challenge58(input: "([") == false, failedComment(58))
+    assert(challenge58(input: "[<<<{}>>]") == false, failedComment(58))
+    assert(challenge58(input: "hello") == false, failedComment(58))
+
 }
 
 public func failedComment(_ number: Int) -> String {
