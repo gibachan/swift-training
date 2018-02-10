@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 public func testAll() {
     // challenge55
@@ -55,6 +56,20 @@ public func testAll() {
     assert(challenge61(upTo: 10) == [2, 3, 5, 7], failedComment(61))
     assert(challenge61(upTo: 11) == [2, 3, 5, 7], failedComment(61))
     assert(challenge61(upTo: 12) == [2, 3, 5, 7, 11], failedComment(61))
+    
+    // challenge 62
+    var points = [(first: CGPoint, second: CGPoint)]()
+    points.append((first: CGPoint.zero, second: CGPoint(x: 0, y: -100)))
+    points.append((first: CGPoint.zero, second: CGPoint(x: 100, y: -100)))
+    points.append((first: CGPoint.zero, second: CGPoint(x: 100, y: 0)))
+    points.append((first: CGPoint.zero, second: CGPoint(x: 100, y: 100)))
+    points.append((first: CGPoint.zero, second: CGPoint(x: 0, y: 100)))
+    points.append((first: CGPoint.zero, second: CGPoint(x: -100, y: 100)))
+    points.append((first: CGPoint.zero, second: CGPoint(x: -100, y: 0)))
+    points.append((first: CGPoint.zero, second: CGPoint(x: -100, y: -100)))
+    
+    assert(challenge62(points: points) == [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0], failedComment(62))
+
 
 }
 
