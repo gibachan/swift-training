@@ -51,6 +51,11 @@ public func testAll() {
     assert(challenge60b([["", "X", ""], ["O", "X", ""], ["O", "", "X"]]) == false, failedComment(60))
     assert(challenge60b( [["", "", ""], ["", "", ""], ["", "", ""]]) == false, failedComment(60))
 
+    // challenge 61
+    assert(challenge61(upTo: 10) == [2, 3, 5, 7], failedComment(61))
+    assert(challenge61(upTo: 11) == [2, 3, 5, 7], failedComment(61))
+    assert(challenge61(upTo: 12) == [2, 3, 5, 7, 11], failedComment(61))
+
 }
 
 public func failedComment(_ number: Int) -> String {
