@@ -70,7 +70,42 @@ public func testAll() {
     
     assert(challenge62(points: points) == [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0], failedComment(62))
 
+    // challenge 63
+    // import GameplayKit
+    //let random = GKMersenneTwisterRandomSource(seed: 1)
+    //var grid = (1...10).map { _ in (1...10).map { _ in Int(random.nextInt(upperBound: 2)) } }
+    
+    let input63 = [
+        [0, 0, 0, 0, 0, 1, 0, 0, 1, 1],
+        [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 0, 1, 0, 0, 1, 1, 0, 0, 0],
+        [1, 0, 1, 0, 1, 1, 1, 1, 1, 0],
+        [1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 1, 1, 0, 1, 1],
+        [1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+        [0, 1, 1, 0, 0, 1, 0, 1, 1, 1],
+        ]
+    var input63b = input63
 
+    let output63 = [
+        [5, 5, 5, 5, 5, 1, 5, 5, 1, 1],
+        [5, 1, 1, 5, 5, 5, 5, 1, 0, 0],
+        [5, 1, 5, 5, 5, 5, 5, 5, 1, 1],
+        [1, 0, 1, 5, 5, 1, 1, 5, 5, 5],
+        [1, 0, 1, 5, 1, 1, 1, 1, 1, 5],
+        [1, 0, 1, 1, 5, 5, 5, 5, 5, 5],
+        [0, 0, 0, 0, 1, 1, 1, 5, 1, 1],
+        [1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+        [0, 1, 1, 0, 0, 1, 0, 1, 1, 1]
+    ]
+    
+    assert(challenge63a(fill: 5, in: input63, at: (x: 2, y: 0)).description == output63.description, failedComment(63))
+    challenge63b(fill: 5, in: &input63b, at: (x: 2, y: 0))
+    assert(input63b.description == output63.description, failedComment(63))
+    
 }
 
 public func failedComment(_ number: Int) -> String {
